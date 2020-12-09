@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient,HttpHeaders,HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 //import {Http} from '@angular/http'
 //import 'rxjs/add/operator/map'
@@ -14,7 +14,7 @@ export class HomePage implements OnInit {
     public data: any = [];
 
     constructor(
-        public httpClient: HttpClient
+        public httpClient: HttpClient,
     ) {
     }
 
@@ -24,8 +24,7 @@ export class HomePage implements OnInit {
     }
 
     test() {
-        console.log('tester');
-        return this.httpClient.get("http://gtd-log.com/antho/wordpress/wp-json").subscribe(
+        return this.httpClient.get("//gtd-log.com/antho/wordpress/wp-json").subscribe(
             (res) => {
                 this.data.push(res);
                 console.log(res);
