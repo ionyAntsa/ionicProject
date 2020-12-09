@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Tester
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,4 +17,13 @@
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
+  <ion-list>
+    <ion-item>
+      <ion-label>Pokémon Yellow</ion-label>
+    </ion-item>
+    <ion-item *ngFor="let item of data ">
+        {{ item.description }}
+    </ion-item>
+
+  </ion-list>
 </ion-content>
