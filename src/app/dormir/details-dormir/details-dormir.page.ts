@@ -12,8 +12,8 @@ export class DetailsDormirPage implements OnInit {
     public product: any = [];
     slideOptions = {
         initialSlide: 1,
-        speed: 400,
-        autoplay: false,
+        autoplay: true,
+        speed: 500,
     };
 
     constructor(

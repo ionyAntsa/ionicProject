@@ -14,7 +14,7 @@ export class DetailsPage implements OnInit {
         initialSlide: 1,
         autoplay: true,
         speed: 500,
-    }
+    };
 
     constructor(
         private activedRoute: ActivatedRoute,
@@ -29,8 +29,6 @@ export class DetailsPage implements OnInit {
                 if (typeof params['id'] != "undefined") {
                     this.service.getDataJson("detail-product", params['id']).subscribe(
                         (res) => {
-                            //console.log(res);
-                            //this.product = JSON.parse(JSON.stringify(res.toString()));
                             this.product = res;
                             this.loadingCtrl.dismiss();
                         }
