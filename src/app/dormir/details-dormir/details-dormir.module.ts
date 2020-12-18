@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TestPageRoutingModule } from './test-routing.module';
+import { DetailsDormirPageRoutingModule } from './details-dormir-routing.module';
 
-import { TestPage } from './test.page';
+import { DetailsDormirPage } from './details-dormir.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TestPageRoutingModule
+    DetailsDormirPageRoutingModule
   ],
-  declarations: [TestPage]
+  declarations: [DetailsDormirPage]
 })
-export class TestPageModule {}
+export class DetailsDormirPageModule {}

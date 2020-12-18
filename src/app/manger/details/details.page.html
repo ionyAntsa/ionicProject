@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="product">Détail : {{product.name}}</ion-title>
+    <ion-title *ngIf="!product">Erreur Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-slides [options]="slideOptions" pager="true" #slider (ionSlidesDidLoad)="slidesDidLoad(slider)">
+      <ion-slide *ngFor="let image of product.images">
+        <img [src]="image.src" >
+      </ion-slide>
+    </ion-slides>
+    <ion-card-header>
+      <ion-card-title *ngIf="product"> {{product.name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p [innerHTML]="product.description "></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

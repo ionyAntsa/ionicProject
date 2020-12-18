@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient,HttpHeaders,HttpParams} from "@angular/common/http";
+import {ServiceWordpressService} from "../service-wordpress.service";
 import {Observable} from "rxjs/Observable";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
+import {Router} from "@angular/router";
 //import {Http} from '@angular/http'
 //import 'rxjs/add/operator/map'
 
@@ -14,35 +16,24 @@ export class HomePage implements OnInit {
     public data: any = [];
 
     constructor(
-        public httpClient: HttpClient,
+        public service: ServiceWordpressService,
+        public route: Router
     ) {
     }
 
     ngOnInit(): void {
-        this.test();
-        //this.test1();
+        this.getHome();
+
     }
 
-    test() {
-        return this.httpClient.get("//gtd-log.com/antho/wordpress/wp-json").subscribe(
+    getHome() {
+        return this.service.getDataJson("home").subscribe(
             (res) => {
                 this.data.push(res);
                 console.log(res);
-            });
+            }
+        )
     }
-
-    tryData() {
-
-    }
-
-    /*test1(){
-        return this.httpClient.get("http://gtd-log.com/antho/wordpress/wp-json")
-            .map(data=>data)
-            .subscribe((data:any) =>{
-                this.data.push(data);
-                console.log(data);
-            })
-    }*/
 }
 
 
